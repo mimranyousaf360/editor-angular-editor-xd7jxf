@@ -1,0 +1,47 @@
+<h1 style="text-align:Left;background-color:mintcream">Apply</h1>
+<div style="text-align:center">
+  <b>Company:&nbsp;</b><span>{{ applyForJob.Company }}</span>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Position:&nbsp;</b><span>{{ applyForJob.Title }}</span>
+</div>
+<br />
+
+<div class="row" style="background-color:mintcream">
+  <div class="col-6">
+    <div class="mb-3">
+      <label for="emailId" class="form-label">Email address:</label>
+      <input
+        type="email"
+        class="form-control"
+        id="emailId"
+        placeholder="name@example.com"
+      />
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="mb-3">
+      <label for="experienceId" class="form-label">Experience:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="experienceId"
+        placeholder="Experience In Year"
+      />
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="mb-3">
+      <label for="cvId" class="form-label">CV:</label>
+      <input type="file" class="form-control" id="cvId" placeholder="CV" />
+    </div>
+  </div>
+  <div class="col-12" style="text-align:right">
+    <button
+      type="submit"
+      (click)="SubmitRequest()"
+      class="btn btn-primary mb-3"
+    >
+      Submit
+    </button>
+  </div>
+</div>

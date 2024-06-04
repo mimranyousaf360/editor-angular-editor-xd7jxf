@@ -1,0 +1,62 @@
+<h3>JOBS</h3>
+<div>
+  <div class="row">
+    <div class="col-6">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Seach Title Wise Job's"
+          #SearchTitle
+        />
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Seach Company Wise Job's"
+          #SearchCmpany
+        />
+      </div>
+    </div>
+    <div class="col-12" style="text-align:right">
+      <button
+        class="btn btn-outline-secondary"
+        type="button"
+        id="button-addon2"
+        (click)="filterResults(SearchTitle.value, SearchCmpany.value)"
+      >
+        Search
+      </button>
+    </div>
+  </div>
+  <div>
+    <div class="row mt-2">
+      <div
+        class="col-sm-6 mt-2"
+        *ngFor="
+          let job of jobsCollection
+            | paginate : { itemsPerPage: 4, currentPage: p }
+        "
+      >
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">{{ job.Title }}</h4>
+            <h5 class="card-title">{{ job.Company }}</h5>
+            <p class="card-text">
+              {{ job.Description }}
+            </p>
+            <a [routerLink]="['apply', job.Id]" class="btn btn-primary"
+              >Apply</a
+            >
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center" class="mt-5">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>
