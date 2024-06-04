@@ -28,6 +28,7 @@ import { BreadcrumbModule } from 'angular-crumbs';
 import { JobsComponent } from './Jobs/app-jobs.component';
 import { ApplyComponent } from './Jobs/apply/app-apply.component';
 
+
 const appRoutes: Routes = [
   {
     path: '',
